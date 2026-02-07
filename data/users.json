@@ -1,0 +1,14 @@
+[
+  {
+    "id": "e53839ca-cfe3-4904-ba63-ac0e78797bb4",
+    "username": "divu",
+    "password": "$2b$10$ZAkWTb2EoQFRO.ur/BqBvO.dcHFhWF4oiRl2Zg06DphR.gjzBS.3O",
+    "createdAt": "2026-02-07T12:34:05.063Z"
+  },
+  {
+    "id": "ede6589f-35a6-4f56-a5c8-f564ccb526f3",
+    "username": "divya",
+    "password": "$2b$10$u6m4tMpVkfEZFW8GPofaaOmnGmKJ/mTFWMrEcmSFl996Wje.H21X.",
+    "createdAt": "2026-02-07T12:36:12.789Z"
+  }
+]

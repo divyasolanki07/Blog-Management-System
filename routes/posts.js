@@ -1,6 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const Post = require('../models/postModel');
+const { ensureAuthenticated } = require('../middleware/authMiddleware');
+
+// Protect all routes in this router
+router.use(ensureAuthenticated);
 
 // Index Route
 router.get('/', (req, res) => {

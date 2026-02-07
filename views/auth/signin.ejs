@@ -1,0 +1,32 @@
+<%- include('../partials/header') %>
+
+    <div class="card" style="max-width: 400px; margin: 2rem auto;">
+        <h1 style="text-align: center; margin-bottom: 2rem;">Sign In</h1>
+
+        <% if (typeof error !=='undefined' ) { %>
+            <div
+                style="background: rgba(239, 68, 68, 0.2); border: 1px solid #ef4444; color: #fca5a5; padding: 0.75rem; border-radius: 0.5rem; margin-bottom: 1.5rem;">
+                <%= error %>
+            </div>
+            <% } %>
+
+                <form action="/signin" method="POST">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Sign In</button>
+                </form>
+
+                <p style="text-align: center; margin-top: 1.5rem; color: #94a3b8;">
+                    Don't have an account? <a href="/signup">Sign Up</a>
+                </p>
+    </div>
+
+    <%- include('../partials/footer') %>
