@@ -1,0 +1,31 @@
+<%- include('../partials/header') %>
+
+    <article class="card" style="max-width: 800px; margin: 0 auto;">
+        <header style="margin-bottom: 2rem; border-bottom: 1px solid var(--glass-border); padding-bottom: 1rem;">
+            <h1>
+                <%= post.title %>
+            </h1>
+            <div class="post-meta">
+                Posted on <%= new Date(post.createdAt).toLocaleDateString() %>
+                    <% if (post.updatedAt) { %>
+                        (Updated: <%= new Date(post.updatedAt).toLocaleDateString() %>)
+                            <% } %>
+            </div>
+        </header>
+
+        <div class="post-content" style="font-size: 1.125rem; margin-bottom: 3rem; white-space: pre-wrap;">
+            <%= post.content %>
+        </div>
+
+        <div class="actions"
+            style="border-top: 1px solid var(--glass-border); padding-top: 1.5rem; justify-content: flex-end;">
+            <a href="/posts" class="btn btn-secondary">Back to List</a>
+            <a href="/posts/<%= post.id %>/edit" class="btn btn-primary">Edit Post</a>
+            <form action="/posts/<%= post.id %>?_method=DELETE" method="POST" style="display: inline;">
+                <button type="submit" class="btn btn-danger"
+                    onclick="return confirm('Are you sure you want to delete this post?')">Delete</button>
+            </form>
+        </div>
+    </article>
+
+    <%- include('../partials/footer') %>

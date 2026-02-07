@@ -1,0 +1,37 @@
+<%- include('../partials/header') %>
+
+    <header style="margin-bottom: 3rem; text-align: center;">
+        <h1>Latest Posts</h1>
+        <p class="text-muted">Welcome to my blog. Here's what I've been thinking about.</p>
+    </header>
+
+    <% if (posts.length===0) { %>
+        <div class="card" style="text-align: center; padding: 3rem;">
+            <h3>No posts yet</h3>
+            <p class="text-muted">Get started by creating your first blog post!</p>
+            <a href="/posts/new" class="btn btn-primary" style="margin-top: 1rem;">Create New Post</a>
+        </div>
+        <% } else { %>
+            <div class="posts-grid"
+                style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem;">
+                <% posts.forEach(post=> { %>
+                    <article class="card">
+                        <div class="post-meta">
+                            <%= new Date(post.createdAt).toLocaleDateString() %>
+                        </div>
+                        <!-- wrap title in a link to the show page -->
+                        <a href="/posts/<%= post.id %>">
+                            <h2 style="color: var(--text-color); margin-bottom: 1rem;">
+                                <%= post.title %>
+                            </h2>
+                        </a>
+                        <p style="margin-bottom: 1.5rem; color: #cbd5e1;">
+                            <%= post && post.content ? post.content.substring(0,150) : "No content available" %>
+                        </p>
+                        <a href="/posts/<%= post.id %>" class="btn btn-secondary btn-sm">Read More</a>
+                    </article>
+                    <% }) %>
+            </div>
+            <% } %>
+
+                <%- include('../partials/footer') %>
