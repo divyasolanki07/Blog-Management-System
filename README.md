@@ -129,7 +129,3 @@ BlogPr/
 This project is licensed under the **ISC License**.
 
 ---
-
-<p align="center">
-  Made with ❤️ by [Divya V]
-</p>
